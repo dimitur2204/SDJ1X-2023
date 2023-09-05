@@ -1,8 +1,8 @@
 public class Book {
-    private String author;
-    private String title;
+    final private String author;
+    final private String title;
     private double price;
-    private int pages;
+    final private int pages;
     public Book(){
         this.author = null;
         this.title = null;
