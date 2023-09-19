@@ -1,14 +1,30 @@
 public class Fibonacci {
-    public static void main(String[] args) {
-        System.out.println("Which Fibonacci number do you want to see?");
-        var keyboard = new java.util.Scanner(System.in);
-        var number = keyboard.nextInt();
+    public int recursiveFibonacci(int number) {
+        if (number == 0 || number == 1) {
+            return 1;
+        }
+        return recursiveFibonacci(number - 1) + recursiveFibonacci(number - 2);
+    }
+
+    public int iterativeFibonacci(int number){
+        var first = 1;
+        var second = 1;
+        var result = 0;
+        for (int i = 2; i < number; i++) {
+            result = first + second;
+            first = second;
+            second = result;
+        }
+        return result;
+    }
+
+    public int arrayFibonacci(int number) {
         var fibonacci = new int[number + 1];
         fibonacci[0] = 1;
         fibonacci[1] = 1;
-        for (var i = 2; i < number + 1; i++) {
+        for (int i = 2; i < number; i++) {
             fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
         }
-        System.out.println(fibonacci[number]);
+        return fibonacci[number];
     }
 }
