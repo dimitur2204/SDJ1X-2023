@@ -1,0 +1,10 @@
+public class Handball extends Ball{
+    public Handball(int suitableAge, int diameter) {
+        super(suitableAge, diameter);
+    }
+
+    @Override
+    public String play() {
+        return "Throw";
+    }
+}
